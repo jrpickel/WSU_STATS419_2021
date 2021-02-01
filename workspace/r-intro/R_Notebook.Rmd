@@ -1,0 +1,77 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r,setup,echo=FALSE}
+install.packages("stringr")              # Install stringr package
+library("stringr")                       # Load stringr package
+```
+
+```{r,handshake}
+handshake = function(n=1,plotme=F){
+  num_of_handshake = n*(n-1)/2;
+  num_of_handshake;
+}
+handshake(4)
+```
+
+```{r,letter_count,echo=FALSE}
+my_data <- read.delim("original.txt")
+
+letter_count = function(string){
+  string = str_to_lower(string)
+  dict = str_count(string,letters)
+  num_punc = str_count(string,c("[:digit:]","[:punct:]"))
+  names(dict) = paste(letters)
+  dict$OTHER = sum(num_punc)
+  df = as.data.frame(dict)
+  df
+}
+
+fileName <- 'original.txt'
+original = readChar(fileName, file.info(fileName)$size)
+original_df = letter_count(original)
+
+fileName <- 'final.txt'
+final = readChar(fileName, file.info(fileName)$size)
+final_df = letter_count(final)
+
+original_df
+final_df
+
+```
+```{r,Visualization}
+og_table = as.table(as.matrix(original_df))
+og_bar = barplot(og_table,main="Letter Count of original.txt")
+
+final_table = as.table(as.matrix(final_df))
+f_bar = barplot(final_table,main="Letter Count of final.txt")
+
+og_bar
+f_bar
+```
+
+```{r,easter_egg}
+
+string_difference = function(str1,str2){
+  str1 = gsub("[\r\n]", " ", str1)
+  str2 = gsub("[\r\n]", " ", str2)
+  str1_vect = unlist(strsplit(str1,split = ' '))
+  str2_vect = unlist(strsplit(str2,split = ' '))
+  difference = setdiff(str1_vect,str2_vect)
+  difference
+}
+
+fileName <- 'file1.txt'
+f1 = readChar(fileName, file.info(fileName)$size)
+
+fileName <- 'file2.txt'
+f2 = readChar(fileName, file.info(fileName)$size)
+
+string_difference(f1,f2)
+```

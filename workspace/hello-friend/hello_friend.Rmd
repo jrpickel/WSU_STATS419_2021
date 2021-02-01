@@ -1,0 +1,67 @@
+---
+title: "HelloFriend"
+output:
+  pdf_document:
+    extra_dependencies:
+    - float
+    - flafter
+    fig_caption: yes
+    fig_width: 6
+    fig_height: 6
+  word_document: default
+indent: yes
+header-includes:
+- \usepackage{fancyhdr}
+- \pagestyle{fancy}
+- \fancypagestyle{plain}{\pagestyle{fancy}}
+- \headsep = 60pt
+sections: yes
+editor_options:
+  chunk_output_type: inline
+---
+\fancyhead[RO,RE]{Justin Pickel \\ WSU-ID: 11594028 \\ STATS 419 \\ Dr.Shaffer \\ `r format(Sys.time(), '%B %d, %Y')` }
+\setlength\parindent{24pt}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tinytex)
+library(fmsb)
+```
+Hello, my name is Justin Pickel. I am 31 years old and currently pursuing a degree in Data Analytics on the business track at the Washington State University Vancouver (WSUV) campus. I have chosen the WSUV campus because I am currently living in Battle Ground, Washington, which is only 15 minutes from the Vancouver campus. I was born in Vancouver, Washington, but moved to Wimberley, Texas, when I was seven. After graduating from high school, I started a career at Chipotle Mexican Grill Inc. I quickly moved through the ranks, starting as a line cook and ending my career as a General Manager, where I oversaw a team of 38 people. During the six years I spent with Chipotle, I learned that I was very interested in Chipotle's operational data. I was known for having the most accurate sales projection within my region by applying the very few statistics I knew.  
+\par
+During my time with Chipotle, I learned so much about myself and how I learn. I also enjoyed the experience as it made me aware of my natural leadership traits. This semester in the STATs 419 class, we took a personality test. My natural self Is considered to be a D-3. These individuals are strong leaders and have very little time to mess around with things that do not contribute to the bottom-line results. I was surprised at how accurate the personality test is. I would not be able to explain my natural self as efficiently as the test results. The hardest part about being a D-3 type personality is that when you meet other D-3's we sometimes have too many cooks in the kitchen. I am working on self-discipline by learning how to take the back seat and let the pack leader take us on a journey. However, my natural self cannot help but analyze the inefficiencies associated with the individual in charge. Chipotle has had a great influence on me concerning this area of personal growth. If the leader in charge creates a friendly and positively charged environment in which they are willing to learn for their fellow peers, the overall success is enormous. I have also seen the side of individual leaders who have created hostile environments.  
+\par
+The inefficiency that follows when the leader tries to lead a team of individuals who do not feel valued is interesting. I align with the ideas known as Herzberg's theories of motivation. Chipotle gave me an incredible platform to exercise these ideas by solidifying the importance of motivational theories. I can attest that Hertzberg was on to something. So far in the STAT 419 class, I have been exposed to a different take on motivation theories. I find it interesting and believe an incredible contributing factor to self-motivation theory is respect. When we learn new things from experts, it can hinder our self-motivation if the individual expert does not create a sense of respect. Again, I can use my experience from Chipotle to solidify how this theory holds. I have worked under managers who create a sense of disrespect between their pupils, and often a revolt ensues as the principal foundation of self-motivation starts to erode. I find the philosophical idea of being a leader paramount as life's evolution insists the student will become the teacher one day.  
+\par
+So, it is ever more important to have a solid understanding of the responsibility you, the leader, have on other individuals. Suppose the leader is not morally sound and works from their understanding of the principles that contribute to self-motivation without properly analyzing the responses. In that case, the leader can find themselves in a position in which they become demotivated in striving for the greater good. I truly enjoy spending time reflecting on how a shift at Chipotle was conducted and always looked forward to analyzing how I, as the leader, could have been more impactful in my crusade of developing an autonomous culture. I also have a strong belief in understanding that true leaders break down barriers; they do not build barriers. Through my experience, I can see how sometimes it can become uncomfortable when you realize the people around you are better than you at certain things. Often this can create a conflict of interest. On the one hand, you want your pupils to be successful; on the other hand, you don't want to be vulnerable to the idea of being obsolete or having the feeling of being called out for not holding yourself to the same principles you hold your peers too. 
+\par
+One interesting thing I discovered through my self-directed learning is that when you open yourself up to the idea that you want to make everyone around you as good if not better than yourself, you create the opportunity to become a true leader. People around will look up to you, and they start to develop a value that they can associate with your input. This phenomenon creates a self-fulfilling prophecy that intrinsically motivates those around you to do better since they can see the results from within their leader and themselves. In my PHIL 101 class, this was discussed as the idea of being noble. Once you have achieved a noble state of mind, it is incredible what you can accomplish with other people. The frustrating part about reaching a noble mindset is that it becomes irritating and frustrating when other leaders you work with do not understand the concept. By not understanding the concept of nobility, you can create a very negative culture that affects the group's entire scope as inefficient learning often ensues.  
+\par
+By having a noble mindset, I accomplished great things with a team of 38 individuals as we improved Chipotle's food ordering algorithm, which saved the company money by reducing our Kitchen Managers' mistakes. Reducing problems is one area we excelled. As the leader, I also had the ability to create a sustainable culture within our store, quantified by looking at the store's turnover metric. Turnover is the idea of how many times you replaced a worker. Often the reason someone leaves the team because they did not feel valued or had no feeling of motivation, a direct reflection on the leader's culture. Chipotle had set the benchmark of this metric to be no more than 100%. When I was assigned a new store in Tyler, TX, the store had recorded an unprecedented 660% turnover. Meaning that the store hired and fired a staff of 38 people 6.6 times in a year. As I watched how the former General Manager conducted his operations, I quickly identified that he did not possess a noble mindset and lacked true leadership qualities.  
+\par
+The culture he had established plagued the store's ability to perform, proven by the Average Daily Sales (ADS) metric. Chipotle had set the ADS benchmark of a store that had been in operation for less than two years to a 20% ADS growth YoY. The former General manager was currently producing a (-6%) YoY ADS. After My brother and I established a positive store culture, we saw the store's turnover metric decreased from 660% to 90% within one year. While the ADS metric rose from (-6%) to 40% YoY, more than twice the benchmark amount. Our success can be attributed to having a noble mind set and a true understanding of self-motivation. These traits enabled us to create a fully autonomous culture full of self-motivated, self-directed learners who rose above and beyond the call of duty because they believed in themselves and saw the results. After my sixth year with Chipotle, I decided I wanted a career change; I moved back to the Vancouver area to escape the Texas heat and pursue new opportunities. I started looking at schools in the area and found WSUV.  
+\par
+I started my college career at WSUV in 2017 as a finance major since I am wildly fascinated by the stock market and how money works. Upon taking several financial courses, I discovered I have solid mathematical skills and could not learn enough statistics. I was disappointed with the lack of statistics classes offered by the finance degree. At the end of my first year at WSUV, my advisor introduced me to a new degree called Data Analytics. After looking at the degree plan and the job descriptions of a Data Analyst/Scientist, I fell in love with data analytics. I have a curious mind and always want to know more. I ask a lot of questions and enjoy all the skills I have developed so far. Through this process, I have discovered I enjoy writing code, especially with python and R. Currently, my graduation date is May 2022. My ideal first job is anything to do with finding patterns and insight from massive amounts of data. I genuinely enjoy working with and leading teams of like-minded people to solve complex problems. Currently, I need to develop my understanding of the enormous number of statistical models to answer the questions when do I use this model? And why do I use this model? I would also like to increase my statistical knowledge so that I can improve my machine learning capabilities. So, I have chosen this class, apart from being a requirement, to help me develop more statistical tools to expand further my knowledge of using statistics to solve problems outside of academia. I hope to gain valuable insight from this course, specifically about problems that contain multiple variables. I am also looking forward to the apprenticeship approach; I believe that will add tremendous value.  
+\par
+
+
+```{r,fig.cap="Justin Pickel's attribute strengths",fig.align='center',echo=FALSE}
+# Basic Radar chart
+#![Justin Pickel's attribute strengths](C:/_git_/WSU_STATS419_2021/workspace/hello-friend/radarchart.png)
+# construct data set
+data = data.frame(Self_Awareness_IQ = c(10,0,8),
+                  Technical_IQ = c(10,0,7),
+                  Social_IQ = c(10,0,6),
+                  Abstract_IQ = c(10,0,9),
+                  Autonomous = c(10,0,9),
+                  Competence = c(10,0,7),
+                  Relatedness = c(10,0,6))
+radarchart(data,
+           seg = 10,
+           title = "Justin Pickel Attributes",
+           cglcol = scales::alpha('black', .5),
+           cglwd = 1,
+           cglty = 1,
+           pfcol = scales::alpha('red', 0.3),
+           plwd = 2)
+
+```

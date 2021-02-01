@@ -1,0 +1,1 @@
+You will need to figure out how to read in these two "datasets" found in this PDF.  I will be providing an auxiliary file where I manually placed the 23 wells based on latitude, longitude, and altitude.
