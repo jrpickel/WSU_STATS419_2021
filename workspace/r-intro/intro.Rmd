@@ -40,8 +40,8 @@ github.path = "https://raw.githubusercontent.com/jrpickel/WSU_STATS419_2021/";
 source_url( paste0(github.path,"main/functions/functions-intro.R") );
 
 # setup the two text files need for letter count functions
-draft_file = source_url( paste0(github.path,"main/dataset/declaration/draft.txt") );
-final_file = source_url( paste0(github.path,"main/dataset/declaration/final.txt") );
+#draft_file = source_url( paste0(github.path,"main/dataset/declaration/draft.txt") );
+#final_file = source_url( paste0(github.path,"main/dataset/declaration/final.txt") );
 ```
 # Handshake
 This function will determine how many handshakes are possible between a given number of people. The arguments for the function ``handshake(n,plotme=F)`` are ``n`` which is a positive integer and ``plotme`` which is a boolean value to determine if a graphical representation should be displayed the default value for plotme is ``plotme=FALSE``. The following formula is what the handshake function uses to determine the number of possible handshakes.
@@ -53,12 +53,12 @@ handshake(4,T)
 ```
 \newpage
 # Letter count
-The function ``letter_count(string)`` will take a string and will count the number of occurrences for each letter in the string. The ``string`` parameter for the function ``letter_count`` can be any kind of string data type.  
+The function ``letter_count(string)`` will take a string and will count the number of occurrences for each letter in the string. The ``string`` parameter for the function ``letter_count`` can be any kind of string data type.\par 
 ## Letter count of the Declaration of Independance draft
 The following data frame shows the letter with their associated counts. The column other is any other character that is not a letter.
 
 ```{r,warning=FALSE}
-fileName <- draft_file; # declare the file as a variable
+fileName <- 'draft.txt' # declare the file as a variable
 original = readChar(fileName, file.info(fileName)$size) # read the file as a string of characters
 original_df = letter_count(original) # compute the letter count
 original_df
@@ -66,7 +66,7 @@ original_df
 ## Letter count of Declaration of Independance signed by Congress
 The following data frame shows the letters and their associated counts for the Declaration of Independence.
 ```{r,warning=FALSE}
-fileName <- final_file # declare the file as a variable
+fileName <- 'final.txt' # declare the file as a variable
 final = readChar(fileName, file.info(fileName)$size) # read the file as a string of characters
 final_df = letter_count(final) # compute the letter count
 final_df
@@ -84,13 +84,14 @@ barplot(og_table,main="Letter Count of draft.txt")
 
 \newpage
 ## Declaration of Independance signed by Congress Visualization
-This is a bar plot to help visualize the count of each letter.\par
-```{r,Final,fig.cap="Letter count for the Declaration of Independance signed by Congress"}
+This is a bar plot to help visualize the count of each letter.
+```{r,Final_visualization,fig.cap="Letter count for the final Declaration of Independance"}
 # generate frequency of letters
 final_table = as.table(as.matrix(final_df))
 # display the frequencies as a bar plot
 barplot(final_table,main="Letter Count of final.txt")
 ```
+\par
 ## Comparing the letter counts between the two Declaration of Independance texts.
 As we can see very little change between the original draft and the one Congress signed. We can also see that the letter 'e' is the most common letter as we would expect. If we take the sum of the 'original.txt' letter count  including the 'Other' column we get a total of 8,314 characters. If we do the same thing to the 'final.txt' we get a total of 6,760 which is surprising to me since congress usually adds more legal jargon. I also think looking at the frequency of each letter really shows us that some letters are quite a bit more frequent then say the letter 'k' or 'q'.\par
 # Compute Determinant
