@@ -40,8 +40,8 @@ github.path = "https://raw.githubusercontent.com/jrpickel/WSU_STATS419_2021/";
 source_url( paste0(github.path,"main/functions/functions-intro.R") );
 
 # setup the two text files need for letter count functions
-#original_file = source_url( paste0(github.path,"main/workspace/r-intro/dataset/original.txt") );
-#final_file = source_url( paste0(github.path,"main/workspace/r-intro/dataset/final.txt") );
+draft_file = source_url( paste0(github.path,"main/dataset/declaration/draft.txt") );
+final_file = source_url( paste0(github.path,"main/dataset/declaration/final.txt") );
 ```
 # Handshake
 This function will determine how many handshakes are possible between a given number of people. The arguments for the function ``handshake(n,plotme=F)`` are ``n`` which is a positive integer and ``plotme`` which is a boolean value to determine if a graphical representation should be displayed the default value for plotme is ``plotme=FALSE``. The following formula is what the handshake function uses to determine the number of possible handshakes.
@@ -54,11 +54,11 @@ handshake(4,T)
 \newpage
 # Letter count
 The function ``letter_count(string)`` will take a string and will count the number of occurrences for each letter in the string. The ``string`` parameter for the function ``letter_count`` can be any kind of string data type.  
-## Letter count of the original Declaration of Independance
+## Letter count of the Declaration of Independance draft
 The following data frame shows the letter with their associated counts. The column other is any other character that is not a letter.
 
 ```{r,warning=FALSE}
-fileName <- "original.txt"; # declare the file as a variable
+fileName <- draft_file; # declare the file as a variable
 original = readChar(fileName, file.info(fileName)$size) # read the file as a string of characters
 original_df = letter_count(original) # compute the letter count
 original_df
@@ -66,20 +66,20 @@ original_df
 ## Letter count of Declaration of Independance signed by Congress
 The following data frame shows the letters and their associated counts for the Declaration of Independence.
 ```{r,warning=FALSE}
-fileName <- "final.txt" # declare the file as a variable
+fileName <- final_file # declare the file as a variable
 final = readChar(fileName, file.info(fileName)$size) # read the file as a string of characters
 final_df = letter_count(final) # compute the letter count
 final_df
 ```
 
-## Original Declaration of Independance Visualization
+## Declaration of Independance draft Visualization
 
 Here is a bar plot to help visualize the count of each letter.
 ```{r,Original,fig.cap="Letter count for the original draft of the Declaration of Independance"}
 # generate frequency of letters
 og_table = as.table(as.matrix(original_df))
 # display the frequencies as a bar plot
-barplot(og_table,main="Letter Count of original.txt")
+barplot(og_table,main="Letter Count of draft.txt")
 ```
 
 \newpage
