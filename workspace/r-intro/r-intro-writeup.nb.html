@@ -241,135 +241,17 @@ summary {
 <p>Try executing this chunk by clicking the <em>Run</em> button within the chunk or by placing your cursor inside it and pressing <em>Ctrl+Shift+Enter</em>.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGFuZHNoYWtlID0gZnVuY3Rpb24obj0xLHBsb3RtZT1GKXtcbiAgaWYoZmxvb3IobikgPT0gbiAmJiBuID4gMCl7XG4gICAgbnVtX29mX2hhbmRzaGFrZSA9IG4qKG4tMSkvMjtcbiAgICBpZihwbG90bWUgPT0gRil7XG4gICAgcHJpbnQocGFzdGUwKFwiVGhlIG51bWJlciBvZiBoYW5kc2hha2VzIGlzIFwiLG51bV9vZl9oYW5kc2hha2UpKVxuICAgIH1cbiAgZWxzZSB7XG4gICAgbSA9IG1hdHJpeCgxLG4sbilcbiAgICBmb3IoaSBpbiBjKDE6bikpe1xuICAgICAgbVtpLGldID0gMFxuICAgIH1cbiAgICB0aXRsZSA9IHBhc3RlMChcIlRoZSBudW1iZXIgb2YgaGFuZCBzaGFrZXMgaXMgXCIsbnVtX29mX2hhbmRzaGFrZSlcbiAgICBuZXR3b3JrID0gZ3JhcGguYWRqYWNlbmN5KG0pXG4gICAgcGxvdChuZXR3b3JrLG1haW4gPSB0aXRsZSApXG4gICAgfVxuICB9XG4gIGVsc2V7XG4gICAgcHJpbnQoXCJQbGVhc2UgZW50ZXIgYSBpbnRlZ2VyIGdyZWF0ZXIgdGhhbiAwXCIpXG4gIH1cbn1cblxuaGFuZHNoYWtlKDQsVClcbmBgYCJ9 -->
-<pre class="r"><code>handshake = function(n=1,plotme=F){
-  if(floor(n) == n &amp;&amp; n &gt; 0){
-    num_of_handshake = n*(n-1)/2;
-    if(plotme == F){
-    print(paste0(&quot;The number of handshakes is &quot;,num_of_handshake))
-    }
-  else {
-    m = matrix(1,n,n)
-    for(i in c(1:n)){
-      m[i,i] = 0
-    }
-    title = paste0(&quot;The number of hand shakes is &quot;,num_of_handshake)
-    network = graph.adjacency(m)
-    plot(network,main = title )
-    }
-  }
-  else{
-    print(&quot;Please enter a integer greater than 0&quot;)
-  }
-}
-
-handshake(4,T)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdChjYXJzKVxuYGBgIn0= -->
+<pre class="r"><code>plot(cars)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxub2dfdGFibGUgPSBhcy50YWJsZShhcy5tYXRyaXgob3JpZ2luYWxfZGYpKVxub2dfYmFyID0gYmFycGxvdChvZ190YWJsZSxtYWluPVwiTGV0dGVyIENvdW50IG9mIG9yaWdpbmFsLnR4dFwiKVxuXG5maW5hbF90YWJsZSA9IGFzLnRhYmxlKGFzLm1hdHJpeChmaW5hbF9kZikpXG5mX2JhciA9IGJhcnBsb3QoZmluYWxfdGFibGUsbWFpbj1cIkxldHRlciBDb3VudCBvZiBmaW5hbC50eHRcIilcblxub2dfYmFyXG5mX2JhclxuYGBgIn0= -->
-<pre class="r"><code>og_table = as.table(as.matrix(original_df))
-og_bar = barplot(og_table,main=&quot;Letter Count of original.txt&quot;)
-
-final_table = as.table(as.matrix(final_df))
-f_bar = barplot(final_table,main=&quot;Letter Count of final.txt&quot;)
-
-og_bar
-f_bar</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5zdHJpbmdfZGlmZmVyZW5jZSA9IGZ1bmN0aW9uKHN0cjEsc3RyMil7XG4gIHN0cjEgPSBnc3ViKFwiW1xcclxcbl1cIiwgXCIgXCIsIHN0cjEpXG4gIHN0cjIgPSBnc3ViKFwiW1xcclxcbl1cIiwgXCIgXCIsIHN0cjIpXG4gIHN0cjFfdmVjdCA9IHVubGlzdChzdHJzcGxpdChzdHIxLHNwbGl0ID0gJyAnKSlcbiAgc3RyMl92ZWN0ID0gdW5saXN0KHN0cnNwbGl0KHN0cjIsc3BsaXQgPSAnICcpKVxuICBkaWZmZXJlbmNlID0gc2V0ZGlmZihzdHIxX3ZlY3Qsc3RyMl92ZWN0KVxuICBkaWZmZXJlbmNlXG59XG5cbmZpbGVOYW1lIDwtICdmaWxlMS50eHQnXG5mMSA9IHJlYWRDaGFyKGZpbGVOYW1lLCBmaWxlLmluZm8oZmlsZU5hbWUpJHNpemUpXG5cbmZpbGVOYW1lIDwtICdmaWxlMi50eHQnXG5mMiA9IHJlYWRDaGFyKGZpbGVOYW1lLCBmaWxlLmluZm8oZmlsZU5hbWUpJHNpemUpXG5cbnN0cmluZ19kaWZmZXJlbmNlKGYxLGYyKVxuYGBgIn0= -->
-<pre class="r"><code>
-string_difference = function(str1,str2){
-  str1 = gsub(&quot;[\r\n]&quot;, &quot; &quot;, str1)
-  str2 = gsub(&quot;[\r\n]&quot;, &quot; &quot;, str2)
-  str1_vect = unlist(strsplit(str1,split = &#39; &#39;))
-  str2_vect = unlist(strsplit(str2,split = &#39; &#39;))
-  difference = setdiff(str1_vect,str2_vect)
-  difference
-}
-
-fileName &lt;- &#39;file1.txt&#39;
-f1 = readChar(fileName, file.info(fileName)$size)
-
-fileName &lt;- &#39;file2.txt&#39;
-f2 = readChar(fileName, file.info(fileName)$size)
-
-string_difference(f1,f2)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29tcHV0ZURldGVybWluYW50ID0gZnVuY3Rpb24obSl7XG4gIGlmKG5yb3cobSkgIT0gbmNvbChtKSl7XG4gICAgcmV0dXJuKHByaW50KFwiUGxlYXNlIGVudGVyIGEgc3F1YXJlIG1hdHJpeFwiKSlcbiAgfVxuICBpZihucm93KG0pID09IDIpe1xuICAgICByZXMgPSAobVsxLDFdICogbVsyLDJdKSAtIChtWzEsMl0gKiBtWzIsMV0pXG4gICAgIHJldHVybihyZXMpXG4gICAgfVxuICBlbHNle1xuICAgIHN0YXJ0ID0gMFxuICAgIGZvciAoaSBpbiBjKDE6bnJvdyhtKSkpe1xuICAgICAgcmVzdWx0ID0gKG1bMSxpXSAqIGNvbXB1dGVEZXRlcm1pbmFudChtWy1jKDEpLC1jKGkpXSkpXG4gICAgICBpZihpJSUyICE9IDApe1xuICAgICAgICBzdGFydCA9IHN0YXJ0ICsgcmVzdWx0XG4gICAgICB9XG4gICAgICBlbHNle1xuICAgICAgICBzdGFydCA9IHN0YXJ0IC0gcmVzdWx0XG4gICAgICB9XG4gICAgfVxuICAgIHJldHVybihzdGFydClcbiAgfVxufVxuXG5tID0gbWF0cml4KGZsb29yKHJ1bmlmKDI1LG1pbj0xLG1heD0yNSkpLG5yb3c9NSxuY29sPTUpXG5tXG5cbmNvbXB1dGVEZXRlcm1pbmFudChtKVxuYGBgIn0= -->
-<pre class="r"><code>computeDeterminant = function(m){
-  if(nrow(m) != ncol(m)){
-    return(print(&quot;Please enter a square matrix&quot;))
-  }
-  if(nrow(m) == 2){
-     res = (m[1,1] * m[2,2]) - (m[1,2] * m[2,1])
-     return(res)
-    }
-  else{
-    start = 0
-    for (i in c(1:nrow(m))){
-      result = (m[1,i] * computeDeterminant(m[-c(1),-c(i)]))
-      if(i%%2 != 0){
-        start = start + result
-      }
-      else{
-        start = start - result
-      }
-    }
-    return(start)
-  }
-}
-
-m = matrix(floor(runif(25,min=1,max=25)),nrow=5,ncol=5)
-m
-
-computeDeterminant(m)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2luc3RhbGwucGFja2FnZXMoXCJzdHJpbmdyXCIpICAgICAgICAgICAgICAjIEluc3RhbGwgc3RyaW5nciBwYWNrYWdlXG4jaW5zdGFsbC5wYWNrYWdlcygnaWdyYXBoJylcbmxpYnJhcnkoc3RyaW5ncikgICAgICAgICAgICAgICAgICAgICAgICMgTG9hZCBzdHJpbmdyIHBhY2thZ2VcbmxpYnJhcnkoaWdyYXBoKVxuYGBgIn0= -->
-<pre class="r"><code>#install.packages(&quot;stringr&quot;)              # Install stringr package
-#install.packages(&#39;igraph&#39;)
-library(stringr)                       # Load stringr package
-library(igraph)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog46S847ixaWdyYXBo46S847iyXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0cyBhcmUgbWFza2VkIGZyb20g46S847ixcGFja2FnZTpzdGF0c+OkvOO4sjpcblxuICAgIGRlY29tcG9zZSwgc3BlY3RydW1cblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g46S847ixcGFja2FnZTpiYXNl46S847iyOlxuXG4gICAgdW5pb25cbiJ9 -->
-<pre><code>
-Attaching package: 㤼㸱igraph㤼㸲
-
-The following objects are masked from 㤼㸱package:stats㤼㸲:
-
-    decompose, spectrum
-
-The following object is masked from 㤼㸱package:base㤼㸲:
-
-    union</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
+<p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Ctrl+Alt+I</em>.</p>
+<p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Ctrl+Shift+K</em> to preview the HTML file).</p>
+<p>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.</p>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3Isc2V0dXAsZWNobz1GQUxTRX0NCiNpbnN0YWxsLnBhY2thZ2VzKCJzdHJpbmdyIikgICAgICAgICAgICAjIEluc3RhbGwgc3RyaW5nciBwYWNrYWdlDQojaW5zdGFsbC5wYWNrYWdlcygnaWdyYXBoJykNCmxpYnJhcnkoc3RyaW5ncikgICAgICAgICAgICAgICAgICAgICAgICAjIExvYWQgc3RyaW5nciBwYWNrYWdlDQpsaWJyYXJ5KGlncmFwaCkNCmBgYA0KDQpgYGB7cixoYW5kc2hha2VfZnVuY3Rpb259DQpoYW5kc2hha2UgPSBmdW5jdGlvbihuPTEscGxvdG1lPUYpew0KICBpZihmbG9vcihuKSA9PSBuICYmIG4gPiAwKXsNCiAgICBudW1fb2ZfaGFuZHNoYWtlID0gbioobi0xKS8yOw0KICAgIGlmKHBsb3RtZSA9PSBGKXsNCiAgICBwcmludChwYXN0ZTAoIlRoZSBudW1iZXIgb2YgaGFuZHNoYWtlcyBpcyAiLG51bV9vZl9oYW5kc2hha2UpKQ0KICAgIH0NCiAgZWxzZSB7DQogICAgbSA9IG1hdHJpeCgxLG4sbikNCiAgICBmb3IoaSBpbiBjKDE6bikpew0KICAgICAgbVtpLGldID0gMA0KICAgIH0NCiAgICB0aXRsZSA9IHBhc3RlMCgiVGhlIG51bWJlciBvZiBoYW5kIHNoYWtlcyBpcyAiLG51bV9vZl9oYW5kc2hha2UpDQogICAgbmV0d29yayA9IGdyYXBoLmFkamFjZW5jeShtKQ0KICAgIHBsb3QobmV0d29yayxtYWluID0gdGl0bGUgKQ0KICAgIH0NCiAgfQ0KICBlbHNlew0KICAgIHByaW50KCJQbGVhc2UgZW50ZXIgYSBpbnRlZ2VyIGdyZWF0ZXIgdGhhbiAwIikNCiAgfQ0KfQ0KDQpoYW5kc2hha2UoNCxUKQ0KYGBgDQoNCmBgYHtyLGxldHRlcl9jb3VudCxlY2hvPUZBTFNFfQ0KbXlfZGF0YSA8LSByZWFkLmRlbGltKCJvcmlnaW5hbC50eHQiKQ0KDQpsZXR0ZXJfY291bnQgPSBmdW5jdGlvbihzdHJpbmcpew0KICBzdHJpbmcgPSBzdHJfdG9fbG93ZXIoc3RyaW5nKQ0KICBkaWN0ID0gc3RyX2NvdW50KHN0cmluZyxsZXR0ZXJzKQ0KICBudW1fcHVuYyA9IHN0cl9jb3VudChzdHJpbmcsYygiWzpkaWdpdDpdIiwiWzpwdW5jdDpdIikpDQogIG5hbWVzKGRpY3QpID0gcGFzdGUobGV0dGVycykNCiAgZGljdCRPVEhFUiA9IHN1bShudW1fcHVuYykNCiAgZGYgPSBhcy5kYXRhLmZyYW1lKGRpY3QpDQogIGRmDQp9DQoNCmZpbGVOYW1lIDwtICdvcmlnaW5hbC50eHQnDQpvcmlnaW5hbCA9IHJlYWRDaGFyKGZpbGVOYW1lLCBmaWxlLmluZm8oZmlsZU5hbWUpJHNpemUpDQpvcmlnaW5hbF9kZiA9IGxldHRlcl9jb3VudChvcmlnaW5hbCkNCg0KZmlsZU5hbWUgPC0gJ2ZpbmFsLnR4dCcNCmZpbmFsID0gcmVhZENoYXIoZmlsZU5hbWUsIGZpbGUuaW5mbyhmaWxlTmFtZSkkc2l6ZSkNCmZpbmFsX2RmID0gbGV0dGVyX2NvdW50KGZpbmFsKQ0KDQpvcmlnaW5hbF9kZg0KZmluYWxfZGYNCg0KYGBgDQoNCmBgYHtyLFZpc3VhbGl6YXRpb259DQpvZ190YWJsZSA9IGFzLnRhYmxlKGFzLm1hdHJpeChvcmlnaW5hbF9kZikpDQpvZ19iYXIgPSBiYXJwbG90KG9nX3RhYmxlLG1haW49IkxldHRlciBDb3VudCBvZiBvcmlnaW5hbC50eHQiKQ0KDQpmaW5hbF90YWJsZSA9IGFzLnRhYmxlKGFzLm1hdHJpeChmaW5hbF9kZikpDQpmX2JhciA9IGJhcnBsb3QoZmluYWxfdGFibGUsbWFpbj0iTGV0dGVyIENvdW50IG9mIGZpbmFsLnR4dCIpDQoNCm9nX2Jhcg0KZl9iYXINCmBgYA0KDQpgYGB7cixlYXN0ZXJfZWdnfQ0KDQpzdHJpbmdfZGlmZmVyZW5jZSA9IGZ1bmN0aW9uKHN0cjEsc3RyMil7DQogIHN0cjEgPSBnc3ViKCJbXHJcbl0iLCAiICIsIHN0cjEpDQogIHN0cjIgPSBnc3ViKCJbXHJcbl0iLCAiICIsIHN0cjIpDQogIHN0cjFfdmVjdCA9IHVubGlzdChzdHJzcGxpdChzdHIxLHNwbGl0ID0gJyAnKSkNCiAgc3RyMl92ZWN0ID0gdW5saXN0KHN0cnNwbGl0KHN0cjIsc3BsaXQgPSAnICcpKQ0KICBkaWZmZXJlbmNlID0gc2V0ZGlmZihzdHIxX3ZlY3Qsc3RyMl92ZWN0KQ0KICBkaWZmZXJlbmNlDQp9DQoNCmZpbGVOYW1lIDwtICdmaWxlMS50eHQnDQpmMSA9IHJlYWRDaGFyKGZpbGVOYW1lLCBmaWxlLmluZm8oZmlsZU5hbWUpJHNpemUpDQoNCmZpbGVOYW1lIDwtICdmaWxlMi50eHQnDQpmMiA9IHJlYWRDaGFyKGZpbGVOYW1lLCBmaWxlLmluZm8oZmlsZU5hbWUpJHNpemUpDQoNCnN0cmluZ19kaWZmZXJlbmNlKGYxLGYyKQ0KYGBgDQoNCg0KYGBge3IsM3gzIGRldGVybWluYW50fQ0KY29tcHV0ZURldGVybWluYW50ID0gZnVuY3Rpb24obSl7DQogIGlmKG5yb3cobSkgIT0gbmNvbChtKSl7DQogICAgcmV0dXJuKHByaW50KCJQbGVhc2UgZW50ZXIgYSBzcXVhcmUgbWF0cml4IikpDQogIH0NCiAgaWYobnJvdyhtKSA9PSAyKXsNCiAgICAgcmVzID0gKG1bMSwxXSAqIG1bMiwyXSkgLSAobVsxLDJdICogbVsyLDFdKQ0KICAgICByZXR1cm4ocmVzKQ0KICAgIH0NCiAgZWxzZXsNCiAgICBzdGFydCA9IDANCiAgICBmb3IgKGkgaW4gYygxOm5yb3cobSkpKXsNCiAgICAgIHJlc3VsdCA9IChtWzEsaV0gKiBjb21wdXRlRGV0ZXJtaW5hbnQobVstYygxKSwtYyhpKV0pKQ0KICAgICAgaWYoaSUlMiAhPSAwKXsNCiAgICAgICAgc3RhcnQgPSBzdGFydCArIHJlc3VsdA0KICAgICAgfQ0KICAgICAgZWxzZXsNCiAgICAgICAgc3RhcnQgPSBzdGFydCAtIHJlc3VsdA0KICAgICAgfQ0KICAgIH0NCiAgICByZXR1cm4oc3RhcnQpDQogIH0NCn0NCg0KbSA9IG1hdHJpeChmbG9vcihydW5pZigyNSxtaW49MSxtYXg9MjUpKSxucm93PTUsbmNvbD01KQ0KbQ0KDQpjb21wdXRlRGV0ZXJtaW5hbnQobSkNCmBgYA0KDQpgYGB7cn0NCmxpYnJhcnkoZGV2dG9vbHMpDQpsb2NhbC5wYXRoID0gIkM6L19naXRfL1dTVV9TVEFUUzQxOV8yMDIxLyI7DQpzb3VyY2UoIHBhc3RlMChsb2NhbC5wYXRoLCJmdW5jdGlvbnMvci1pbnRyby5SIiksIGxvY2FsPVQgKTsNCm0gPSBtYXRyaXgoZmxvb3IocnVuaWYoMjUsbWluPTEsbWF4PTI1KSksbnJvdz01LG5jb2w9NSkNCm0NCg0KY29tcHV0ZURldGVybWluYW50KG0pDQpgYGANCg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQpwbG90KGNhcnMpDQpgYGANCg0KQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkN0cmwrQWx0K0kqLg0KDQpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkN0cmwrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4NCg0KVGhlIHByZXZpZXcgc2hvd3MgeW91IGEgcmVuZGVyZWQgSFRNTCBjb3B5IG9mIHRoZSBjb250ZW50cyBvZiB0aGUgZWRpdG9yLiBDb25zZXF1ZW50bHksIHVubGlrZSAqS25pdCosICpQcmV2aWV3KiBkb2VzIG5vdCBydW4gYW55IFIgY29kZSBjaHVua3MuIEluc3RlYWQsIHRoZSBvdXRwdXQgb2YgdGhlIGNodW5rIHdoZW4gaXQgd2FzIGxhc3QgcnVuIGluIHRoZSBlZGl0b3IgaXMgZGlzcGxheWVkLg0K</div>
 
 
 
@@ -416,7 +298,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("R_Notebook.Rmd");
+  window.initializeSourceEmbed("r-intro-writeup.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
