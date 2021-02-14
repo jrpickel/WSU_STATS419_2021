@@ -1,18 +1,131 @@
 ---
-title: "R Notebook"
-output: html_notebook
+title: "o-well Data set"
+output:
+  pdf_document:
+    extra_dependencies:
+    - float
+    - flafter
+    fig_caption: yes
+    fig_width: 6
+    fig_height: 6
+  word_document: default
+indent: yes
+header-includes:
+- \usepackage{fancyhdr}
+- \pagestyle{fancy}
+- \fancypagestyle{plain}{\pagestyle{fancy}}
+- \headsep = 60pt
+sections: yes
+editor_options:
+  chunk_output_type: inline
 ---
+\fancyhead[RO,RE]{Justin Pickel \\ STATS 419 \\ Dr.Shaffer }
+\fancyhead[LO,LE]{`r format(Sys.time(), '%B %d, %Y')`}
+\fancyhead[CO,CE]{Assignment: o-well}
+\setlength\parindent{24pt}
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
-
-```{r}
-plot(cars)
+my.source = 'github';
+github.path = "https://raw.githubusercontent.com/jrpickel/WSU_STATS419_2021/";
+table1 =  paste0(github.path,"main/dataset/o-well/pdf_num1.txt");
+table2 = paste0(github.path,"main/dataset/o-well/pdf_num2.txt");
+locations = paste0(github.path,"main/dataset/o-well/wells-location.txt");
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+```{r,read tables,include=FALSE}
+owell.metals = read.table(table1)
+owell.chemistry = read.table(table2,header=TRUE)
+owell.location = read.table(locations,header=TRUE,sep = "|")
+```
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+```{r,fig.cap="Wells metal data"}
+head(owell.metals) # Table 1.
+```
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+```{r,fig.cap="Wells chemistry data"}
+head(owell.chemistry) # Table 2.
+```
+
+The following tables show the first five entries of the data frame. To have a deeper understand of the data I have made a data dictionary along with a brief summary of the data.  
+
+# Summary of data
+In March 2012 ground water samples were collected from twenty-three different wells along the coastal area of Gulf of Aqaba, Saudi Arabia. Most of the well are privately owned, dug in swallow aquifers and are located in relative close proximity tot eh east coast, except for well 23 which is a deeply dug well.
+\begin{quote}
+"Results of dissolved metals and physicochemical properties of groundwater samples are presented in Table
+1 and Table 2. Metal contents in groundwater samples were low throughout the sampling wells and they are
+within the range listed for waters suitable for drinking water (WHO, 2008). High concentrations of these metals
+have been found in the adjacent soil samples and geologic units (Table 3 and Table 4). This suggests that the
+primary source of dissolved metals to groundwater is not probably metals leached from the surrounding rocks
+and soils, but rather released from aquifer materials (water-rock interaction). It may also suggest that
+groundwater aquifer is not significantly recharged from surface runoff or the recharge rate from surface water is
+low or negligible. This is consistent with the low and erratic annual precipitation rate occurred in the region." - (Journal of Applied Science and Agriculture,2013)
+\end{quote}
+
+# Data Dictionary
+The following dictionary has been made to better understand the columns names of the two tables. Each value in the table is expressed in $\mu$g\textbackslash L \par
+## Table 1 
+As - Arsenic  
+B - Boron  
+Ba - Barium  
+Be - Beryllium  
+Cd - Cadmium  
+Co - Cobalt  
+Cr - Chromium  
+Cu - Copper 
+Fe - Iron  
+Hg - Mercury  
+Mn - Manganese  
+Mo - Molybdenum  
+Pb - Lead  
+Se - selenium  
+Zn - Zinc\par
+## Table 2
+well - The well number   
+ph - The ph of the well water  
+Eh - The redox of the well  
+TDS - Total dissolved solids  
+Ca - Calcium   
+K - Potassium  
+Mg - Magnesium  
+Na - Sodium  
+HCO3 - Bicarbonate  
+Cl - Chlorine    
+SO4 - Sulfate   
+NO3 - Nitrate  
+F - Fluorine 
+Po4 - Phosphate  
+TH - Total Hardness  
+TA - Total Alkalinity  
+TS - Total Solids  
+SS - Suspended Solids  
+COD - Chemical Oxygen Demand  
+BOD - Biological Oxygen Demand  
+DO - Dissolved Oxygen  
+
+```{r,location data,include=FALSE}
+location.data = owell.location[c(2,3)]
+cbind(owell.metals,location.data)
+cbind(owell.chemistry,location.data)
+```
+
+```{r,fault distances,include=FALSE}
+owell.metals$fault = c(2189,1900,3629,4674,720,4895,2064,4494,868,5882,5813,5665,670,493,4818,1114,2705,5582,2539,4466 ,6009,3313,2697)
+owell.chemistry$fault = c(2189,1900,3629,4674,720,4895,2064,4494,868,5882,5813,5665,670,493,4818,1114,2705,5582,2539,4466 ,6009,3313,2697)
+```
+
+```{r,rock formations,include=FALSE}
+owell.metals$geology = c("Sand","Alkaline","Alkaline","Alkaline","Granite","Volcanic","Gypsum","Alkaline","Gypsum","Volcanic","Alkaline,Granite","Granite","Gypsum","Gypsum","Volcanic","Alkaline,Volcanic","Gypsum","Sand","Sand","Sand","Sand","Sand","Alkaline,Granite")
+
+owell.chemistry$geology = c("Sand","Alkaline","Alkaline","Alkaline","Granite","Volcanic","Gypsum","Alkaline","Gypsum","Volcanic","Alkaline,Granite","Granite","Gypsum","Gypsum","Volcanic","Alkaline,Volcanic","Gypsum","Sand","Sand","Sand","Sand","Sand","Alkaline,Granite")
+```
+
+```{r,saving list as RDS,include=FALSE}
+wells = list()
+
+wells$saudi$chemistry = owell.chemistry
+wells$saudi$chemistry = owell.metals
+
+saveRDS(wells,"wells.rds")
+```

@@ -1,0 +1,55 @@
+---
+title: "HelloFriend"
+output:
+  pdf_document:
+    extra_dependencies:
+    - float
+    - flafter
+    fig_caption: yes
+    fig_width: 6
+    fig_height: 6
+  word_document: default
+indent: yes
+header-includes:
+- \usepackage{fancyhdr}
+- \pagestyle{fancy}
+- \fancypagestyle{plain}{\pagestyle{fancy}}
+- \headsep = 60pt
+sections: yes
+editor_options:
+  chunk_output_type: inline
+---
+\fancyhead[RO,RE]{Justin Pickel \\ WSU-ID: 11594028 \\ STATS 419 \\ Dr.Shaffer \\ `r format(Sys.time(), '%B %d, %Y')` }
+\setlength\parindent{24pt}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+my.source = 'github';
+github.path = "https://raw.githubusercontent.com/jrpickel/WSU_STATS419_2021/";
+source_url( paste0(github.path,"main/dataset/o-well/pdf_num1") );
+```
+
+```{r}
+owell.metals = read.table("pdf_num1.txt")
+owell.chemistry = read.table("pdf_num2.txt",header=TRUE)
+owell.location = read.table("wells-location.txt",header=TRUE,sep = "|")
+
+location.data = owell.location[c(2,3)]
+cbind(owell.metals,location.data)
+cbind(owell.chemistry,location.data)
+
+owell.metals$fault = c(2189,1900,3629,4674,720,4895,2064,4494,868,5882,5813,5665,670,493,4818,1114,2705,5582,2539,4466 ,6009,3313,2697)
+owell.chemistry$fault = c(2189,1900,3629,4674,720,4895,2064,4494,868,5882,5813,5665,670,493,4818,1114,2705,5582,2539,4466 ,6009,3313,2697)
+
+owell.metals$geology = c("Sand","Alkaline","Alkaline","Alkaline","Granite","Volcanic","Gypsum","Alkaline","Gypsum","Volcanic","Alkaline,Granite","Granite","Gypsum","Gypsum","Volcanic","Alkaline,Volcanic","Gypsum","Sand","Sand","Sand","Sand","Sand","Alkaline,Granite")
+
+owell.chemistry$geology = c("Sand","Alkaline","Alkaline","Alkaline","Granite","Volcanic","Gypsum","Alkaline","Gypsum","Volcanic","Alkaline,Granite","Granite","Gypsum","Gypsum","Volcanic","Alkaline,Volcanic","Gypsum","Sand","Sand","Sand","Sand","Sand","Alkaline,Granite")
+
+wells = list()
+
+wells$saudi$chemistry = owell.chemistry
+wells$saudi$chemistry = owell.metals
+
+saveRDS(wells,"wells.rds")
+```
