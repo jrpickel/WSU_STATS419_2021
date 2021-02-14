@@ -40,8 +40,8 @@ github.path = "https://raw.githubusercontent.com/jrpickel/WSU_STATS419_2021/";
 source_url( paste0(github.path,"main/functions/functions-intro.R") );
 
 # setup the two text files need for letter count functions
-#draft_file = source_url( paste0(github.path,"main/dataset/declaration/draft.txt") );
-#final_file = source_url( paste0(github.path,"main/dataset/declaration/final.txt") );
+#draft_file = readChar( paste0(github.path,"main/dataset/declaration/draft.txt") );
+#final_file = readChar( paste0(github.path,"main/dataset/declaration/final.txt") );
 ```
 # Handshake
 This function will determine how many handshakes are possible between a given number of people. The arguments for the function ``handshake(n,plotme=F)`` are ``n`` which is a positive integer and ``plotme`` which is a boolean value to determine if a graphical representation should be displayed the default value for plotme is ``plotme=FALSE``. The following formula is what the handshake function uses to determine the number of possible handshakes.

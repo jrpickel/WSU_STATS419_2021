@@ -1,0 +1,18 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+owell.metals = read.table("pdf_num1.txt")
+owell.chemistry = read.table("pdf_num2.txt",header=TRUE)
+owell.location = read.table("wells-location.txt",header=TRUE,sep = "|")
+
+#owell.metals$latitude = owell.location$latitude
+#owell.metal$longitude = owell.location$longitude
+location.data = owell.location[c(2,3)]
+cbind(owell.metals,location.data)
+cbind(owell.chemistry,location.data)
+
+```
