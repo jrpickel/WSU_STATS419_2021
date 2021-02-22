@@ -33,23 +33,25 @@ knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
 # install.packages('dplyr')
 # install.packages('corrplot')
 # install.packages('Hmisc')
-# install.packagews('conover.test')
+# install.packages('conover.test')
+# install.packages('devtools')
 
 library(ggpubr)
 library(dplyr)
 library(corrplot)
 library(Hmisc)
 library(conover.test)
+library(devtools)
 
 
 my.source = 'github';
 github.path = "https://raw.githubusercontent.com/jrpickel/WSU_STATS419_2021/";
-rds.path = "https://github.com/jrpickel/WSU_STATS419_2021/raw/main/workspace/o-well/wells.rds"
-# remote access to functions source_url( paste0(github.path,"main/functions/functions-statistics.R") );
 
-# local function path
-local.path = "C:/_git_/WSU_STATS419_2021/";
-source( paste0(local.path,"functions/functions-statistics.R"), local=T );
+#remote access to RDS file
+rds.path = "https://github.com/jrpickel/WSU_STATS419_2021/raw/main/workspace/o-well/wells.rds"
+
+# remote access to functions 
+source_url( paste0(github.path,"main/functions/functions-owell.R") );
 
 data.rds = paste0(github.path,"main/workspace/wells.rds")
 ```
@@ -80,7 +82,7 @@ low or negligible. This is consistent with the low and erratic annual precipitat
 \end{quote}
 At the end of this document I have provided a data dictionary to help understand some of the abbreviations used in this data set.\par
 # Create Factors for Analysis
-Here I decided to turn the geology column in the two data sets in a factor. This will help later in the analysis to compare the means of an element across different geology groups.\par
+Here I decided to turn the geology column in the two data sets into a factor data type. This will help later in the analysis to compare the means of an element across different geology groups.\par
 ```{r, create factors}
 metals$geology = as.factor(metals$geology)
 chemistry$geology = as.factor(chemistry$geology)
@@ -103,7 +105,7 @@ summary(chemistry)
 ```
 
 # Observing Metals data
-I decided to normalize the metals data set and plot a box plot for each metal. This allows us to easily compare all metals together in one graphic. The reason I normalized is to reduce the distortion of the different values of the metals this allows use to easily compare metals side by side. We can see from  
+I decided to normalize the metals data set and plot a box plot for each metal. This allows us to easily compare all metals together in one graphic. The reason I normalized is to reduce the distortion of the different values of the metals this allows us to easily compare metals side by side. We can see from  
 (figure 1.) that we have several outliers.\par
 ```{r,normalized metals boxplot, fig.cap= "Normilized boxplot of all metals.",echo=FALSE}
 # normalize the data by calling the function normalize
@@ -132,10 +134,11 @@ boxplot(chemistry.norm,ylab = "Normalized Value",xlab="Chemsitry data",
 ```
   
 # Lead Analysis
-When looking at (figure 2.) I found it interesting that element Pb also known as Lead has a higher median value than the other metals. Upon this observation I wanted to see if their is a difference in lead values among the different geology groups.
+When looking at (figure 2.) I found it interesting that element Pb also known as Lead has a higher median value than the other metals. Upon this observation I wanted to see if there is a difference in lead values among the different geology groups.
 
 ## Lead Analysis Visualization
-To see if we have a difference between groups I first decided to visualize the Lead values across the different groups using a box plot. Here each box plot represents a different geology group and the body of the box plot represents the Lead values from the metals data set. After visual inspection of (figure 3.) we can see that their does seem to be a difference in lead levels across the different groups. To confirm this hypothesis we will use either the one way ANOVA or the Kruskal-Wallis test.  
+To see if we have a difference between groups I first decided to visualize the Lead values across the different groups using a box plot. Here each box plot represents a different geology group and the body of the box plot represents the Lead values from the metals data set. After visual inspection of (figure 3.) we can see that there does seem to be a difference in lead levels across the different groups. To confirm this hypothesis we will use either the one way ANOVA or the Kruskal-Wallis test.  
+\newline
 Lets first take a look at the summary statistics of Lead across the groups. Then we can visualize this data using the box plots.  
 ```{r, Lead analysis,include=FALSE}
 # global variable used for reference.
@@ -166,9 +169,9 @@ ggboxplot(metals, x = "geology", y = element,
 ```
   
 ## One-way ANOVA
-A one-way ANOVA test is an extension of independent two-samples t-test for comparing means in a situation where there are more than two groups. In one-way ANOVA, the data is organized into several groups base on one single grouping variable (also called \emph{factor} variable).  
+A one-way ANOVA test is an extension of independent two-samples t-test for comparing means in a situation where there are more than two groups. In a one-way ANOVA, the data is organized into several groups base on one single grouping variable (also called \emph{factor} variable).  
 \newline
-In order to determine if we can use the parametric one-way ANOVA test we need to determine if the data follows the one-way ANOVA assumptions.  
+In order to determine if we can use the parametric one-way ANOVA test we need to determine if the data conforms to the one-way ANOVA assumptions.  
 \newline
 The Assumptions are:
 \begin{itemize}
@@ -180,7 +183,7 @@ The Assumptions are:
 Since the groups are independent we are good for the first assumption. Next we will check for normality.  
 
 ### Check for Normality
-To check for normality we can use the shapiro-test as well as a density plots. One issue with the shapiro test is that you need at least three samples to perform the test. Since some of our groups have less than three samples we can not assume normality for all groups. This means we fail the second assumption of the one-way ANOVA test. Since we can not fully determine if the data is normally distributed across all groups we will use the non parametric equivalent Kruskal-Wallis test just to be safe. However we can still look at the density plot just for fun.  
+To check for normality we can use the shapiro-test as well as a density plot. One issue with the shapiro test is that you need at least three samples to perform the test. Since some of our groups have less than three samples we can not assume normality for all groups. This means we have failed the second assumption of the one-way ANOVA test. Since we can not fully determine if the data is normally distributed across all groups we will use the non parametric equivalent Kruskal-Wallis test just to be safe. However we can still look at the density plot just for fun.  
 
 ```{r, normality check, fig.cap="Density plot of lead value across all geology groups",warning=FALSE,fig.dim=c(7,6)}
 ggplot(metals, aes(x=Pb, group = geology, fill=geology)) +
@@ -193,10 +196,10 @@ ggplot(metals, aes(x=Pb, group = geology, fill=geology)) +
 While looking at the density plot (figure 4.) we can see most of the groups follow a normal distribution but since we can not confirm through a second test we will use the Kruskal-Wallis test.  
   
 ## Kruskal-Wallis test on Lead (Pb)
-The Kruskal-Wallis test is a non-parametric alternative to one-way ANOVA test, which extends the two-samples Wilcoxon test in the situation where there are more than two groups. It is recommended when the assumptions of one-way ANOVA test are not met. The Null hypothesis of the Kruskal-Wallis test is that there is no significant difference between the groups.  
+The Kruskal-Wallis test is a non-parametric alternative to the one-way ANOVA test, which extends the two-samples Wilcoxon test in the situation where there are more than two groups. It is recommended when the assumptions of one-way ANOVA test are not met. The null hypothesis of the Kruskal-Wallis test is that there is no significant difference between the groups.  
   
 ### Interpreting the Kruskal-Wallis test on Lead (Pb)
-After running the Kruskal-Wallis test we can see that the p-value of the test is not less than the alpha value of 0.05. This means we fail to reject the Null hypothesis indicating that there is no significant difference of Lead levels across the different geology groups.  
+After running the Kruskal-Wallis test we can see that the p-value of the test is not less than the alpha value of 0.05. This means we fail to reject the null hypothesis indicating that there is no significant difference of Lead levels across the different geology groups.  
 ```{r, metals krustal test}
 kruskal.test(metals$Pb ~ geology, data = metals)
 ```
@@ -238,7 +241,7 @@ levels(chemistry$geology)
 ```
   
 ### Interpruting the Conover-Iman pairwise comparison
-The above results show a pairwise matrix between the different geology groups. The top number is the t-test statistic and the bottom number is the p-value. Unfortunately the display of the Conover test does not properly display the names at the top and right side since our group names are to long or because they re comma delimited. To better understand the order of the names we reference our geology levels.  
+The above results show a pairwise matrix between the different geology groups. The top number is the t-test statistic and the bottom number is the p-value. Unfortunately the display of the Conover test does not properly display the names at the top and right side since our group names are too long or because they are comma delimited. To better understand the order of the names we reference our geology levels.  
 \newline
 The results from the matrix show that pH is statistically different between Sand and the groups Alkaline_Granite, Alkaline_Volcanic, Granite, and Gypsum. We can visualize the results using a box plot (figure 5.)  
 ```{r, chemistry visualization, fig.cap="pH values across the diffrent geology groups"}
@@ -307,7 +310,7 @@ Se - selenium
 Zn - Zinc\par
 ## Chemistry
 well - The well number   
-ph - The ph of the well water  
+pH - The ph of the well water  
 Eh - The redox of the well  
 TDS - Total dissolved solids  
 Ca - Calcium   
