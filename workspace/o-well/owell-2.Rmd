@@ -21,7 +21,7 @@ editor_options:
 
 \fancyhead[RO,RE]{Justin Pickel \\ STATS 419 \\ Dr.Shaffer }
 \fancyhead[LO,LE]{`r format(Sys.time(), '%B %d, %Y')`}
-\fancyhead[CO,CE]{Assignment: o-well2}
+\fancyhead[CO,CE]{Assignment: o-Well2}
 \setlength\parindent{24pt}
 
 ```{r setup, include=FALSE}
