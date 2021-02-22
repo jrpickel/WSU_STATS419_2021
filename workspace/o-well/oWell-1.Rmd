@@ -104,10 +104,10 @@ COD - Chemical Oxygen Demand
 BOD - Biological Oxygen Demand  
 DO - Dissolved Oxygen  
 
-```{r,location data,include=FALSE}
+```{r,location data, include=FALSE}
 location.data = owell.location[c(2,3)]
-cbind(owell.metals,location.data)
-cbind(owell.chemistry,location.data)
+owell.metals = cbind(owell.metals,location.data)
+owell.chemistry = cbind(owell.chemistry,location.data)
 ```
 
 ```{r,fault distances,include=FALSE}
@@ -125,7 +125,9 @@ owell.chemistry$geology = c("Sand","Alkaline","Alkaline","Alkaline","Granite","V
 wells = list()
 
 wells$saudi$chemistry = owell.chemistry
-wells$saudi$chemistry = owell.metals
+wells$saudi$metals = owell.metals
 
 saveRDS(wells,"wells.rds")
 ```
+
+
