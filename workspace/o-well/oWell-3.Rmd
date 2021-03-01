@@ -50,11 +50,83 @@ github.path = "https://raw.githubusercontent.com/jrpickel/WSU_STATS419_2021/";
 #remote access to RDS file
 rds.path = "https://github.com/jrpickel/WSU_STATS419_2021/raw/main/workspace/o-well/wells.rds"
 
+# wilcox.class = "https://github.com/jrpickel/WSU_STATS419_2021/blob/main/workspace/o-well/wells.rds"
+
 # remote access to functions 
 source_url( paste0(github.path,"main/functions/functions-owell.R") );
 
 data.rds = paste0(github.path,"main/workspace/wells.rds")
 ```
+
+```{r, python setup}
+#install.packages('reticulate')
+
+library(reticulate)
+use_python(Sys.which("python"))
+use_virtualenv("r-reticulate")
+py_install("pyautogui",pip=TRUE)
+```
+```{python,include=FALSE}
+from pyautogui import *
+from math import sqrt
+
+wells = [Point(x=-974, y=573), Point(x=-969, y=592), Point(x=-956, y=606), Point(x=-943, y=583), Point(x=-899, y=615), Point(x=-895, y=591), Point(x=-900, y=652), Point(x=-970, y=608), Point(x=-978, y=680), Point(x=-933, y=618), Point(x=-942, y=565), Point(x=-822, y=603), Point(x=-912, y=640), Point(x=-920, y=674), Point(x=-874, y=580), Point(x=-810, y=588), Point(x=-869, y=625), Point(x=-885, y=247), Point(x=-904, y=252), Point(x=-900, y=224), Point(x=-899, y=201), Point(x=-878, y=209), Point(x=-820, y=250)]
+
+def scale_2k_pixels(start,end):
+  pixel_length = end[0] - start[0]
+  return = pixel_length/5
+
+def make_line(start,end):
+    line = []
+    line.append(start)
+    for i in range(start[0],end[0]):
+        y = ((39/245)*i) + (254372/245)
+        line.append((i,y))
+    line.append(end)
+    return line
+
+def distance(well,gulf):
+    dist_val = []
+    for p in well:
+        min_ = 1000
+        for q in gulf:
+            dist = sqrt((q[0]-p[0])**2 + (q[1]-p[1])**2)
+            if dist < min_:
+                min_ = dist
+        dist_val.append(min_)
+    return dist_val
+
+def convert(dist,pixel):
+    meters = []
+    for i in dist:
+        val = round((i/pixel) * 2000,0)
+        meters.append(val)
+    return meters
+
+def read_wilcox():
+  Wilcox_C = []
+  Wilcox_S = []
+  file = open(r'C:\_git_\WSU_STATS419_2021\dataset\o-well\wilcox.txt','r')
+  for line in file.readlines():
+    temp = line.strip().split('-')
+    Wilcox_C.append(temp[0])
+    Wilcox_S.append(temp[1])
+  return Wilcox_C,Wilcox_S
+    
+scale_start = (-780,977)
+scale_end = (-730, 977)
+
+gulf_start = Point(x=-1011, y=854)
+gulf_end = Point(x=-843, y=866)
+
+pixel_2k = scale_2k_pixel(scale_start,scale_end)
+line = make_line(gulf_start,gulf_end)
+dist = distance(wells,line)
+meters = convert(dist,pixel_2k)
+Wilcox_C,Wilcox_S = read_wilcox()
+```
+
+
 # Read in data
 We begin by reading in a .RDS file that contains a list of data frames that we will use during our analysis of well water in Gulf of Aqaba, Saudi Arabia.
 ```{r,read in data}
@@ -64,9 +136,19 @@ wells = readRDS(url(rds.path))
 # wells metals data frame
 metals = wells$saudi$metals
 
+# add columns dist_gulf, Wilcox.C, Wilcox.S to data frame
+metals$dist_gulf = py$meters
+metals$Wilcox.C = py$Wilcox_C
+metals$Wilcox.X = py$Wilcox_S
+
 # removed the "well" column as it does not add value in the analysis
 # and can be referenced by row number
 chemistry = wells$saudi$chemistry[,-1]
+
+# add columns dist_gulf, Wilcox.C, Wilcox.S to data frame
+chemistry$dist_gulf = py$meters
+chemistry$Wilcox.C = py$Wilcox_C
+chemistry$Wilcox.X = py$Wilcox_S
 ```
 # Summary of data
 In March 2012 ground water samples were collected from twenty-three different wells along the coastal area of Gulf of Aqaba, Saudi Arabia. Most of the well are privately owned, dug in swallow aquifers and are located in relative close proximity tot eh east coast, except for well 23 which is a deeply dug well.

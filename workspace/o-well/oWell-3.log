@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.23)  23 FEB 2021 12:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.23)  28 FEB 2021 22:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**owell-2.tex
-(./owell-2.tex
+**oWell-3.tex
+(./oWell-3.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> (c:/Users/jrpic/AppData/Roaming/TinyTeX/texmf
 -dist/tex/latex/base/article.cls
@@ -406,8 +406,8 @@ d-pdftex.def
 File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count279
 \l__pdf_internal_box=\box51
-) (./owell-2.aux)
-\openout1 = `owell-2.aux'.
+) (./oWell-3.aux)
+\openout1 = `oWell-3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
 LaTeX Font Info:    ... okay on input line 66.
@@ -458,9 +458,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 66.
 LaTeX Info: Redefining \pageref on input line 66.
 LaTeX Info: Redefining \nameref on input line 66.
-(./owell-2.out) (./owell-2.out)
+(./oWell-3.out) (./oWell-3.out)
 \@outlinefile=\write3
-\openout3 = `owell-2.out'.
+\openout3 = `oWell-3.out'.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -579,26 +579,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-22.48878pt}.
 
 [3]
-<owell-2_files/figure-latex/normalized metals boxplot-1.pdf, id=140, 433.62pt x
+<oWell-3_files/figure-latex/normalized metals boxplot-1.pdf, id=139, 433.62pt x
  433.62pt>
-File: owell-2_files/figure-latex/normalized metals boxplot-1.pdf Graphic file (
+File: oWell-3_files/figure-latex/normalized metals boxplot-1.pdf Graphic file (
 type pdf)
-<use owell-2_files/figure-latex/normalized metals boxplot-1.pdf>
-Package pdftex.def Info: owell-2_files/figure-latex/normalized metals boxplot-1
-.pdf  used on input line 244.
+<use oWell-3_files/figure-latex/normalized metals boxplot-1.pdf>
+Package pdftex.def Info: oWell-3_files/figure-latex/normalized metals boxplot-1
+.pdf  used on input line 252.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--252
+Underfull \hbox (badness 10000) in paragraph at lines 258--260
 
  []
 
-<owell-2_files/figure-latex/normilized chemistry boxplot-1.pdf, id=141, 433.62p
+<oWell-3_files/figure-latex/normilized chemistry boxplot-1.pdf, id=140, 433.62p
 t x 433.62pt>
-File: owell-2_files/figure-latex/normilized chemistry boxplot-1.pdf Graphic fil
+File: oWell-3_files/figure-latex/normilized chemistry boxplot-1.pdf Graphic fil
 e (type pdf)
-<use owell-2_files/figure-latex/normilized chemistry boxplot-1.pdf>
-Package pdftex.def Info: owell-2_files/figure-latex/normilized chemistry boxplo
-t-1.pdf  used on input line 254.
+<use oWell-3_files/figure-latex/normilized chemistry boxplot-1.pdf>
+Package pdftex.def Info: oWell-3_files/figure-latex/normilized chemistry boxplo
+t-1.pdf  used on input line 262.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -612,9 +612,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.256 
-       <./owell-2_files/figure-latex/normalized metals boxplot-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 269--279
+l.263 \end{figure}
+                   <./oWell-3_files/figure-latex/normalized metals boxplot-1.pd
+f>]
+Underfull \hbox (badness 10000) in paragraph at lines 277--287
 
  []
 
@@ -630,31 +631,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.279 
-       <./owell-2_files/figure-latex/normilized chemistry boxplot-1.pdf>]
-<owell-2_files/figure-latex/metals visualization-1.pdf, id=168, 433.62pt x 433.
+l.287 
+       <./oWell-3_files/figure-latex/normilized chemistry boxplot-1.pdf>]
+<oWell-3_files/figure-latex/metals visualization-1.pdf, id=168, 433.62pt x 433.
 62pt>
-File: owell-2_files/figure-latex/metals visualization-1.pdf Graphic file (type 
+File: oWell-3_files/figure-latex/metals visualization-1.pdf Graphic file (type 
 pdf)
-<use owell-2_files/figure-latex/metals visualization-1.pdf>
-Package pdftex.def Info: owell-2_files/figure-latex/metals visualization-1.pdf 
- used on input line 281.
+<use oWell-3_files/figure-latex/metals visualization-1.pdf>
+Package pdftex.def Info: oWell-3_files/figure-latex/metals visualization-1.pdf 
+ used on input line 289.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 287--295
+Underfull \hbox (badness 10000) in paragraph at lines 295--303
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 287--295
+Underfull \hbox (badness 10000) in paragraph at lines 295--303
 
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-97.
-(c:/Users/jrpic/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 34.48878pt, for example:
@@ -667,15 +663,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.298   \item T
-               he data of each factor level are normally distributed. <./owell-
-2_files/figure-latex/metals visualization-1.pdf>]
-<owell-2_files/figure-latex/normality check-1.pdf, id=182, 505.89pt x 433.62pt>
+l.303 
+       <./oWell-3_files/figure-latex/metals visualization-1.pdf>]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
+05.
+(c:/Users/jrpic/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+<oWell-3_files/figure-latex/normality check-1.pdf, id=181, 505.89pt x 433.62pt>
 
-File: owell-2_files/figure-latex/normality check-1.pdf Graphic file (type pdf)
-<use owell-2_files/figure-latex/normality check-1.pdf>
-Package pdftex.def Info: owell-2_files/figure-latex/normality check-1.pdf  used
- on input line 319.
+File: oWell-3_files/figure-latex/normality check-1.pdf Graphic file (type pdf)
+<use oWell-3_files/figure-latex/normality check-1.pdf>
+Package pdftex.def Info: oWell-3_files/figure-latex/normality check-1.pdf  used
+ on input line 327.
 (pdftex.def)             Requested size: 469.76265pt x 402.65372pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -685,13 +685,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-22.48878pt}.
 
-[7pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) 
-has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.331 (Pb)}\label{kruskal-wallis-test-on-lead-pb}}
-                                                   <./owell-2_files/figure-late
-x/normality check-1.pdf>]
+[7]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 34.48878pt, for example:
@@ -700,19 +694,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-22.48878pt}.
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 463--467
-
- []
-
-<owell-2_files/figure-latex/chemistry visualization-1.pdf, id=210, 433.62pt x 4
-33.62pt>
-File: owell-2_files/figure-latex/chemistry visualization-1.pdf Graphic file (ty
-pe pdf)
-<use owell-2_files/figure-latex/chemistry visualization-1.pdf>
-Package pdftex.def Info: owell-2_files/figure-latex/chemistry visualization-1.p
-df  used on input line 469.
-(pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
+[8pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.363 \end{verbatim}
+                     <./oWell-3_files/figure-latex/normality check-1.pdf>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 34.48878pt, for example:
@@ -722,6 +709,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-22.48878pt}.
 
 [9]
+Underfull \hbox (badness 10000) in paragraph at lines 471--475
+
+ []
+
+<oWell-3_files/figure-latex/chemistry visualization-1.pdf, id=214, 433.62pt x 4
+33.62pt>
+File: oWell-3_files/figure-latex/chemistry visualization-1.pdf Graphic file (ty
+pe pdf)
+<use oWell-3_files/figure-latex/chemistry visualization-1.pdf>
+Package pdftex.def Info: oWell-3_files/figure-latex/chemistry visualization-1.p
+df  used on input line 477.
+(pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 34.48878pt, for example:
@@ -730,26 +729,35 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-22.48878pt}.
 
-[10pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
+[10]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.48878pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.48878pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-22.48878pt}.
+
+[11pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
  has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.503 ...s Correlation}\label{metals-correlation}}
-                                                   <./owell-2_files/figure-late
+l.511 ...s Correlation}\label{metals-correlation}}
+                                                   <./oWell-3_files/figure-late
 x/chemistry visualization-1.pdf>]
-<owell-2_files/figure-latex/metals matrix-1.pdf, id=228, 433.62pt x 433.62pt>
-File: owell-2_files/figure-latex/metals matrix-1.pdf Graphic file (type pdf)
-<use owell-2_files/figure-latex/metals matrix-1.pdf>
-Package pdftex.def Info: owell-2_files/figure-latex/metals matrix-1.pdf  used o
-n input line 506.
+<oWell-3_files/figure-latex/metals matrix-1.pdf, id=232, 433.62pt x 433.62pt>
+File: oWell-3_files/figure-latex/metals matrix-1.pdf Graphic file (type pdf)
+<use oWell-3_files/figure-latex/metals matrix-1.pdf>
+Package pdftex.def Info: oWell-3_files/figure-latex/metals matrix-1.pdf  used o
+n input line 514.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
-<owell-2_files/figure-latex/chemsitry matrix-1.pdf, id=229, 433.62pt x 433.62pt
+<oWell-3_files/figure-latex/chemsitry matrix-1.pdf, id=233, 433.62pt x 433.62pt
 >
-File: owell-2_files/figure-latex/chemsitry matrix-1.pdf Graphic file (type pdf)
+File: oWell-3_files/figure-latex/chemsitry matrix-1.pdf Graphic file (type pdf)
 
-<use owell-2_files/figure-latex/chemsitry matrix-1.pdf>
-Package pdftex.def Info: owell-2_files/figure-latex/chemsitry matrix-1.pdf  use
-d on input line 513.
+<use oWell-3_files/figure-latex/chemsitry matrix-1.pdf>
+Package pdftex.def Info: oWell-3_files/figure-latex/chemsitry matrix-1.pdf  use
+d on input line 521.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -759,12 +767,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-22.48878pt}.
 
-[11pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
+[12pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
  has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.515 
-       <./owell-2_files/figure-latex/metals matrix-1.pdf>]
+l.523 
+       <./oWell-3_files/figure-latex/metals matrix-1.pdf>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 34.48878pt, for example:
@@ -773,12 +781,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-22.48878pt}.
 
-[12pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
+[13pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
  has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.516 \newpage
-               <./owell-2_files/figure-latex/chemsitry matrix-1.pdf>]
+l.524 \newpage
+               <./oWell-3_files/figure-latex/chemsitry matrix-1.pdf>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 34.48878pt, for example:
@@ -787,13 +795,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-22.48878pt}.
 
-[13]
+[14]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 540.
+(Font)              <10> on input line 548.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 540.
+(Font)              <7> on input line 548.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 540.
+(Font)              <5> on input line 548.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 34.48878pt, for example:
@@ -802,14 +810,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-22.48878pt}.
 
-[14] (./owell-2.aux)
-Package rerunfilecheck Info: File `owell-2.out' has not changed.
+[15] (./oWell-3.aux)
+Package rerunfilecheck Info: File `oWell-3.out' has not changed.
 (rerunfilecheck)             Checksum: D4F97779C189CFB6725787744B412702;4962.
  ) 
 Here is how much of TeX's memory you used:
- 10352 strings out of 480971
- 153730 string characters out of 5906254
- 473324 words of memory out of 5000000
+ 10353 strings out of 480971
+ 153737 string characters out of 5906254
+ 473325 words of memory out of 5000000
  27301 multiletter control sequences out of 15000+600000
  453662 words of font info for 68 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -825,10 +833,10 @@ ts/type1/public/lm/lmr10.pfb><c:/Users/jrpic/AppData/Roaming/TinyTeX/texmf-dist
 /fonts/type1/public/lm/lmr17.pfb><c:/Users/jrpic/AppData/Roaming/TinyTeX/texmf-
 dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/jrpic/AppData/Roaming/TinyTeX/t
 exmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on owell-2.pdf (14 pages, 264173 bytes).
+Output written on oWell-3.pdf (15 pages, 266247 bytes).
 PDF statistics:
- 314 PDF objects out of 1000 (max. 8388607)
- 274 compressed objects within 3 object streams
- 78 named destinations out of 1000 (max. 500000)
+ 319 PDF objects out of 1000 (max. 8388607)
+ 278 compressed objects within 3 object streams
+ 79 named destinations out of 1000 (max. 500000)
  260 words of extra memory for PDF output out of 10000 (max. 10000000)
 
